@@ -170,7 +170,7 @@ function Home() {
           <div className="rounded-xl border border-border bg-card p-6">
             <Mail className="h-5 w-5 text-accent" />
             <p className="mt-3 text-sm font-semibold">Email</p>
-            <p className="mt-1 text-sm text-muted-foreground">Coming soon</p>
+            <a href="mailto:Dpoutdoorservicesllc@gmail.com" className="mt-1 text-sm text-primary hover:underline">Dpoutdoorservicesllc@gmail.com</a>
           </div>
         </div>
       </section>
