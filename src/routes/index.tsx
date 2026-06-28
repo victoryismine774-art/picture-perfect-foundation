@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import logoAsset from "@/assets/dp-logo.png.asset.json";
 import heroImg from "@/assets/forest-hero.jpg";
-import { Trees, Scissors, Leaf, Hammer, Phone, Mail, MapPin } from "lucide-react";
+import { Trees, Leaf, Phone, Mail, MapPin, Droplets, Home as HomeIcon } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
