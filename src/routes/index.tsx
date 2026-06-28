@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import logoAsset from "@/assets/dp-logo.png.asset.json";
 import heroImg from "@/assets/forest-hero.jpg";
-import { Trees, Scissors, Leaf, Hammer, Phone, Mail, MapPin } from "lucide-react";
+import { Trees, Leaf, Phone, Mail, MapPin, Droplets, Home as HomeIcon } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,11 +23,13 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
+
+
 const services = [
-  { icon: Scissors, title: "Lawn Care", desc: "Mowing, trimming, edging, and seasonal cleanups to keep your property looking its best." },
-  { icon: Trees, title: "Tree & Brush", desc: "Trimming, brush clearing, and removal to keep your land safe and open." },
-  { icon: Leaf, title: "Landscaping", desc: "Mulching, planting, and yard refresh services tailored to your property." },
-  { icon: Hammer, title: "Property Maintenance", desc: "Reliable upkeep and outdoor work for homes, rentals, and small businesses." },
+  { icon: Trees, title: "Tree Services", desc: "Tree trimming, tree removal, and stump grinding — done safely and cleaned up properly." },
+  { icon: Leaf, title: "Lawn & Landscape", desc: "Lawn care, landscaping, bush and hedge trimming, plus planting and removal of plants." },
+  { icon: Droplets, title: "Pressure Washing", desc: "Driveways, sidewalks, and home siding — washed clean and looking fresh." },
+  { icon: HomeIcon, title: "Gutter Cleaning", desc: "Clear leaves and debris so water flows where it should, protecting your home." },
 ];
 
 function Home() {
@@ -100,7 +102,7 @@ function Home() {
           <p className="text-sm font-semibold uppercase tracking-widest text-accent">What we do</p>
           <h2 className="mt-2 text-4xl font-bold tracking-tight">Services</h2>
           <p className="mt-3 text-muted-foreground">
-            A starting list of services — we'll refine this together as the site grows.
+            From tree work to pressure washing — if it's outdoors, we handle it.
           </p>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
