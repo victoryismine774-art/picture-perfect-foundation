@@ -102,7 +102,7 @@ function Home() {
           <p className="text-sm font-semibold uppercase tracking-widest text-accent">What we do</p>
           <h2 className="mt-2 text-4xl font-bold tracking-tight">Services</h2>
           <p className="mt-3 text-muted-foreground">
-            A starting list of services — we'll refine this together as the site grows.
+            From tree work to pressure washing — if it's outdoors, we handle it.
           </p>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
