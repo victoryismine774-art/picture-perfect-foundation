@@ -165,7 +165,7 @@ function Home() {
           <div className="rounded-xl border border-border bg-card p-6">
             <Phone className="h-5 w-5 text-accent" />
             <p className="mt-3 text-sm font-semibold">Phone</p>
-            <p className="mt-1 text-sm text-muted-foreground">Coming soon</p>
+            <a href="tel:+12566553696" className="mt-1 text-sm text-primary hover:underline">1+ (256) 655-3696</a>
           </div>
           <div className="rounded-xl border border-border bg-card p-6">
             <Mail className="h-5 w-5 text-accent" />
