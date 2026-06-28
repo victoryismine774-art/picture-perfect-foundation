@@ -23,11 +23,13 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
+import { Droplets, Home } from "lucide-react";
+
 const services = [
-  { icon: Scissors, title: "Lawn Care", desc: "Mowing, trimming, edging, and seasonal cleanups to keep your property looking its best." },
-  { icon: Trees, title: "Tree & Brush", desc: "Trimming, brush clearing, and removal to keep your land safe and open." },
-  { icon: Leaf, title: "Landscaping", desc: "Mulching, planting, and yard refresh services tailored to your property." },
-  { icon: Hammer, title: "Property Maintenance", desc: "Reliable upkeep and outdoor work for homes, rentals, and small businesses." },
+  { icon: Trees, title: "Tree Services", desc: "Tree trimming, tree removal, and stump grinding — done safely and cleaned up properly." },
+  { icon: Leaf, title: "Lawn & Landscape", desc: "Lawn care, landscaping, bush and hedge trimming, plus planting and removal of plants." },
+  { icon: Droplets, title: "Pressure Washing", desc: "Driveways, sidewalks, and home siding — washed clean and looking fresh." },
+  { icon: Home, title: "Gutter Cleaning", desc: "Clear leaves and debris so water flows where it should, protecting your home." },
 ];
 
 function Home() {
