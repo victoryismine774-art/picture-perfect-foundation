@@ -1,35 +1,64 @@
 import { createFileRoute } from "@tanstack/react-router";
 import logoAsset from "@/assets/dp-logo.png.asset.json";
 import heroImg from "@/assets/forest-hero.jpg";
-import { Trees, Leaf, Phone, Mail, MapPin, Droplets, Home as HomeIcon } from "lucide-react";
+import { Trees, Leaf, Phone, Mail, MapPin, Droplets, Clock, Award, ShieldCheck, Home as HomeIcon } from "lucide-react";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "DP Outdoor Services LLC",
+  description:
+    "Tree trimming, tree removal, stump grinding, landscaping, lawn care, pressure washing, and gutter cleaning in North Alabama.",
+  foundingDate: "2025-04",
+  telephone: "+1-256-655-3696",
+  email: "dpoutdoorservicesllc@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "3717 Gardenside Drive NW",
+    addressLocality: "Huntsville",
+    addressRegion: "AL",
+    postalCode: "35810",
+    addressCountry: "US",
+  },
+  areaServed: ["Madison County, AL", "Limestone County, AL", "Morgan County, AL", "Marshall County, AL", "Texas"],
+  openingHours: "Mo-Sa 08:00-17:00",
+};
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "DP Outdoor Services LLC | Huntsville, AL" },
+      { title: "DP Outdoor Services LLC | Tree & Lawn Care, Huntsville AL" },
       {
         name: "description",
         content:
-          "DP Outdoor Services LLC — professional outdoor and land services in Huntsville, Alabama. Owned and operated by Derrell Pattton Jr.",
+          "Tree removal, stump grinding, lawn care, pressure washing & gutter cleaning across Madison, Limestone, Morgan & Marshall counties. 15 years experience. Free quotes.",
       },
-      { property: "og:title", content: "DP Outdoor Services LLC" },
+      { property: "og:title", content: "DP Outdoor Services LLC | Tree & Lawn Care, Huntsville AL" },
       {
         property: "og:description",
-        content: "Professional outdoor services serving Huntsville, AL and surrounding areas.",
+        content:
+          "Locally owned outdoor and land services serving North Alabama — tree work, landscaping, pressure washing, and gutter cleaning.",
       },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }],
   }),
   component: Home,
 });
-
-
 
 const services = [
   { icon: Trees, title: "Tree Services", desc: "Tree trimming, tree removal, and stump grinding — done safely and cleaned up properly." },
   { icon: Leaf, title: "Lawn & Landscape", desc: "Lawn care, landscaping, bush and hedge trimming, plus planting and removal of plants." },
   { icon: Droplets, title: "Pressure Washing", desc: "Driveways, sidewalks, and home siding — washed clean and looking fresh." },
   { icon: HomeIcon, title: "Gutter Cleaning", desc: "Clear leaves and debris so water flows where it should, protecting your home." },
+];
+
+const counties = [
+  { name: "Madison County", note: "Huntsville, Madison, New Hope, Gurley" },
+  { name: "Limestone County", note: "Athens, Ardmore, Elkmont" },
+  { name: "Morgan County", note: "Decatur, Hartselle, Priceville" },
+  { name: "Marshall County", note: "Guntersville, Albertville, Arab" },
 ];
 
 function Home() {
