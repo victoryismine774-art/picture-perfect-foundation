@@ -1,35 +1,64 @@
 import { createFileRoute } from "@tanstack/react-router";
 import logoAsset from "@/assets/dp-logo.png.asset.json";
 import heroImg from "@/assets/forest-hero.jpg";
-import { Trees, Leaf, Phone, Mail, MapPin, Droplets, Home as HomeIcon } from "lucide-react";
+import { Trees, Leaf, Phone, Mail, MapPin, Droplets, Clock, Award, ShieldCheck, Home as HomeIcon } from "lucide-react";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "DP Outdoor Services LLC",
+  description:
+    "Tree trimming, tree removal, stump grinding, landscaping, lawn care, pressure washing, and gutter cleaning in North Alabama.",
+  foundingDate: "2025-04",
+  telephone: "+1-256-655-3696",
+  email: "dpoutdoorservicesllc@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "3717 Gardenside Drive NW",
+    addressLocality: "Huntsville",
+    addressRegion: "AL",
+    postalCode: "35810",
+    addressCountry: "US",
+  },
+  areaServed: ["Madison County, AL", "Limestone County, AL", "Morgan County, AL", "Marshall County, AL", "Texas"],
+  openingHours: "Mo-Sa 08:00-17:00",
+};
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "DP Outdoor Services LLC | Huntsville, AL" },
+      { title: "DP Outdoor Services LLC | Tree & Lawn Care, Huntsville AL" },
       {
         name: "description",
         content:
-          "DP Outdoor Services LLC — professional outdoor and land services in Huntsville, Alabama. Owned and operated by Derrell Pattton Jr.",
+          "Tree removal, stump grinding, lawn care, pressure washing & gutter cleaning across Madison, Limestone, Morgan & Marshall counties. 15 years experience. Free quotes.",
       },
-      { property: "og:title", content: "DP Outdoor Services LLC" },
+      { property: "og:title", content: "DP Outdoor Services LLC | Tree & Lawn Care, Huntsville AL" },
       {
         property: "og:description",
-        content: "Professional outdoor services serving Huntsville, AL and surrounding areas.",
+        content:
+          "Locally owned outdoor and land services serving North Alabama — tree work, landscaping, pressure washing, and gutter cleaning.",
       },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }],
   }),
   component: Home,
 });
-
-
 
 const services = [
   { icon: Trees, title: "Tree Services", desc: "Tree trimming, tree removal, and stump grinding — done safely and cleaned up properly." },
   { icon: Leaf, title: "Lawn & Landscape", desc: "Lawn care, landscaping, bush and hedge trimming, plus planting and removal of plants." },
   { icon: Droplets, title: "Pressure Washing", desc: "Driveways, sidewalks, and home siding — washed clean and looking fresh." },
   { icon: HomeIcon, title: "Gutter Cleaning", desc: "Clear leaves and debris so water flows where it should, protecting your home." },
+];
+
+const counties = [
+  { name: "Madison County", note: "Huntsville, Madison, New Hope, Gurley" },
+  { name: "Limestone County", note: "Athens, Ardmore, Elkmont" },
+  { name: "Morgan County", note: "Decatur, Hartselle, Priceville" },
+  { name: "Marshall County", note: "Guntersville, Albertville, Arab" },
 ];
 
 function Home() {
@@ -47,6 +76,7 @@ function Home() {
           <nav className="hidden gap-7 text-sm font-medium text-foreground/80 md:flex">
             <a href="#services" className="hover:text-primary">Services</a>
             <a href="#about" className="hover:text-primary">About</a>
+            <a href="#areas" className="hover:text-primary">Service Areas</a>
             <a href="#contact" className="hover:text-primary">Contact</a>
           </nav>
           <a
@@ -76,25 +106,45 @@ function Home() {
             Outdoor work, done right the first time.
           </h1>
           <p className="mt-5 max-w-xl text-lg text-primary-foreground/90">
-            DP Outdoor Services LLC is a locally owned outdoor and land services company
-            serving Huntsville and the surrounding North Alabama area.
+            Locally owned tree, lawn, and property services with 15 years of experience —
+            serving Madison, Limestone, Morgan, and Marshall counties in North Alabama.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href="#contact"
+              href="tel:+12566553696"
               className="rounded-md bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground shadow-lg transition hover:opacity-90"
             >
-              Request a Quote
+              Call (256) 655-3696
             </a>
             <a
-              href="#services"
+              href="#contact"
               className="rounded-md border border-primary-foreground/40 bg-primary-foreground/10 px-5 py-3 text-sm font-semibold text-primary-foreground backdrop-blur transition hover:bg-primary-foreground/20"
             >
-              View Services
+              Request a Free Quote
             </a>
           </div>
         </div>
       </section>
+
+      {/* Trust bar */}
+      <section className="border-b border-border bg-card">
+        <div className="mx-auto grid max-w-6xl gap-6 px-6 py-8 sm:grid-cols-3">
+          <div className="flex items-center gap-3">
+            <Award className="h-5 w-5 shrink-0 text-accent" />
+            <p className="text-sm text-muted-foreground"><span className="font-semibold text-foreground">15 years</span> of hands-on experience</p>
+          </div>
+          <div className="flex items-center gap-3">
+            <ShieldCheck className="h-5 w-5 shrink-0 text-accent" />
+            <p className="text-sm text-muted-foreground"><span className="font-semibold text-foreground">Licensed</span> in Alabama & Texas</p>
+          </div>
+          <div className="flex items-center gap-3">
+            <Clock className="h-5 w-5 shrink-0 text-accent" />
+            <p className="text-sm text-muted-foreground"><span className="font-semibold text-foreground">Mon–Sat</span>, 8am–5pm</p>
+          </div>
+        </div>
+      </section>
+
+
 
       {/* Services */}
       <section id="services" className="mx-auto max-w-6xl px-6 py-24">
@@ -129,13 +179,28 @@ function Home() {
             <h2 className="mt-2 text-4xl font-bold tracking-tight">Built on hard work and local roots.</h2>
             <p className="mt-5 text-muted-foreground">
               DP Outdoor Services LLC is owned and operated by Derrell Pattton Jr. out of
-              Huntsville, Alabama. We take pride in honest work, dependable service, and
-              treating every property like our own.
+              Huntsville, Alabama. The company was founded in April 2025, backed by 15 years
+              of hands-on experience in tree work and outdoor property care.
             </p>
             <p className="mt-4 text-muted-foreground">
-              This is the foundation of our site — more details, photos of past jobs, and
-              a full service list are coming soon.
+              We take pride in honest work, dependable service, and treating every property
+              like our own — from a single overgrown hedge to a full tree removal.
             </p>
+            <dl className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
+              <div className="rounded-xl border border-border bg-card p-4">
+                <dt className="text-xs uppercase tracking-widest text-muted-foreground">Experience</dt>
+                <dd className="mt-1 text-2xl font-bold text-primary">15 yrs</dd>
+              </div>
+              <div className="rounded-xl border border-border bg-card p-4">
+                <dt className="text-xs uppercase tracking-widest text-muted-foreground">Founded</dt>
+                <dd className="mt-1 text-2xl font-bold text-primary">2025</dd>
+              </div>
+              <div className="rounded-xl border border-border bg-card p-4">
+                <dt className="text-xs uppercase tracking-widest text-muted-foreground">Counties</dt>
+                <dd className="mt-1 text-2xl font-bold text-primary">4 + TX</dd>
+              </div>
+            </dl>
+
           </div>
           <div className="flex justify-center">
             <div className="rounded-2xl border border-border bg-card p-10 shadow-sm">
@@ -154,37 +219,80 @@ function Home() {
             Reach out about your property and we'll get back to you with a free estimate.
           </p>
         </div>
-        <div className="mt-10 grid gap-4 sm:grid-cols-3">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-xl border border-border bg-card p-6">
             <MapPin className="h-5 w-5 text-accent" />
             <p className="mt-3 text-sm font-semibold">Location</p>
             <p className="mt-1 text-sm text-muted-foreground">
-              3717 Gardenside Dr<br />Huntsville, AL 35810
+              3717 Gardenside Drive NW<br />Huntsville, AL 35810
             </p>
           </div>
           <div className="rounded-xl border border-border bg-card p-6">
             <Phone className="h-5 w-5 text-accent" />
             <p className="mt-3 text-sm font-semibold">Phone</p>
-            <a href="tel:+12566553696" className="mt-1 text-sm text-primary hover:underline">1+ (256) 655-3696</a>
+            <a href="tel:+12566553696" className="mt-1 block text-sm text-primary hover:underline">(256) 655-3696</a>
           </div>
           <div className="rounded-xl border border-border bg-card p-6">
             <Mail className="h-5 w-5 text-accent" />
             <p className="mt-3 text-sm font-semibold">Email</p>
-            <a href="mailto:Dpoutdoorservicesllc@gmail.com" className="mt-1 text-sm text-primary hover:underline">Dpoutdoorservicesllc@gmail.com</a>
+            <a href="mailto:dpoutdoorservicesllc@gmail.com" className="mt-1 block break-all text-sm text-primary hover:underline">dpoutdoorservicesllc@gmail.com</a>
+          </div>
+          <div className="rounded-xl border border-border bg-card p-6">
+            <Clock className="h-5 w-5 text-accent" />
+            <p className="mt-3 text-sm font-semibold">Business Hours</p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Monday – Saturday<br />8:00 AM – 5:00 PM<br />
+              <span className="text-xs">Closed Sunday</span>
+            </p>
           </div>
         </div>
       </section>
+
+      {/* Service areas */}
+      <section id="areas" className="bg-secondary">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-widest text-accent">Where we work</p>
+            <h2 className="mt-2 text-4xl font-bold tracking-tight">Service areas</h2>
+            <p className="mt-3 text-muted-foreground">
+              We serve all of Madison, Limestone, Morgan, and Marshall counties in North Alabama —
+              and we're also licensed to work in the state of Texas.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {counties.map((c) => (
+              <div key={c.name} className="rounded-xl border border-border bg-card p-6">
+                <MapPin className="h-5 w-5 text-accent" />
+                <h3 className="mt-4 text-lg font-semibold">{c.name}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{c.note}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 rounded-xl border border-accent/40 bg-card p-5 text-sm text-muted-foreground">
+            <span className="font-semibold text-foreground">Also licensed in Texas.</span>{" "}
+            Working on a property out of state? Give us a call — we're licensed to serve Texas as well.
+          </p>
+        </div>
+      </section>
+
 
       {/* Footer */}
       <footer className="border-t border-border bg-primary text-primary-foreground">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 sm:flex-row">
           <div className="flex items-center gap-3">
             <img src={logoAsset.url} alt="" className="h-10 w-10 object-contain" />
-            <p className="text-sm font-semibold">DP Outdoor Services LLC</p>
+            <div>
+              <p className="text-sm font-semibold">DP Outdoor Services LLC</p>
+              <p className="text-xs text-primary-foreground/70">Founded 2025 · Huntsville, AL · Mon–Sat 8am–5pm</p>
+            </div>
           </div>
-          <p className="text-xs text-primary-foreground/70">
-            © {new Date().getFullYear()} DP Outdoor Services LLC. Huntsville, AL.
-          </p>
+          <div className="text-center sm:text-right">
+            <a href="tel:+12566553696" className="block text-sm font-semibold hover:underline">(256) 655-3696</a>
+            <a href="mailto:dpoutdoorservicesllc@gmail.com" className="block text-xs text-primary-foreground/80 hover:underline">dpoutdoorservicesllc@gmail.com</a>
+            <p className="mt-1 text-xs text-primary-foreground/70">
+              © {new Date().getFullYear()} DP Outdoor Services LLC.
+            </p>
+          </div>
         </div>
       </footer>
     </div>
