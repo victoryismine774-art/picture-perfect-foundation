@@ -281,11 +281,18 @@ function Home() {
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 sm:flex-row">
           <div className="flex items-center gap-3">
             <img src={logoAsset.url} alt="" className="h-10 w-10 object-contain" />
-            <p className="text-sm font-semibold">DP Outdoor Services LLC</p>
+            <div>
+              <p className="text-sm font-semibold">DP Outdoor Services LLC</p>
+              <p className="text-xs text-primary-foreground/70">Founded 2025 · Huntsville, AL · Mon–Sat 8am–5pm</p>
+            </div>
           </div>
-          <p className="text-xs text-primary-foreground/70">
-            © {new Date().getFullYear()} DP Outdoor Services LLC. Huntsville, AL.
-          </p>
+          <div className="text-center sm:text-right">
+            <a href="tel:+12566553696" className="block text-sm font-semibold hover:underline">(256) 655-3696</a>
+            <a href="mailto:dpoutdoorservicesllc@gmail.com" className="block text-xs text-primary-foreground/80 hover:underline">dpoutdoorservicesllc@gmail.com</a>
+            <p className="mt-1 text-xs text-primary-foreground/70">
+              © {new Date().getFullYear()} DP Outdoor Services LLC.
+            </p>
+          </div>
         </div>
       </footer>
     </div>
