@@ -105,25 +105,45 @@ function Home() {
             Outdoor work, done right the first time.
           </h1>
           <p className="mt-5 max-w-xl text-lg text-primary-foreground/90">
-            DP Outdoor Services LLC is a locally owned outdoor and land services company
-            serving Huntsville and the surrounding North Alabama area.
+            Locally owned tree, lawn, and property services with 15 years of experience —
+            serving Madison, Limestone, Morgan, and Marshall counties in North Alabama.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href="#contact"
+              href="tel:+12566553696"
               className="rounded-md bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground shadow-lg transition hover:opacity-90"
             >
-              Request a Quote
+              Call (256) 655-3696
             </a>
             <a
-              href="#services"
+              href="#contact"
               className="rounded-md border border-primary-foreground/40 bg-primary-foreground/10 px-5 py-3 text-sm font-semibold text-primary-foreground backdrop-blur transition hover:bg-primary-foreground/20"
             >
-              View Services
+              Request a Free Quote
             </a>
           </div>
         </div>
       </section>
+
+      {/* Trust bar */}
+      <section className="border-b border-border bg-card">
+        <div className="mx-auto grid max-w-6xl gap-6 px-6 py-8 sm:grid-cols-3">
+          <div className="flex items-center gap-3">
+            <Award className="h-5 w-5 shrink-0 text-accent" />
+            <p className="text-sm text-muted-foreground"><span className="font-semibold text-foreground">15 years</span> of hands-on experience</p>
+          </div>
+          <div className="flex items-center gap-3">
+            <ShieldCheck className="h-5 w-5 shrink-0 text-accent" />
+            <p className="text-sm text-muted-foreground"><span className="font-semibold text-foreground">Licensed</span> in Alabama & Texas</p>
+          </div>
+          <div className="flex items-center gap-3">
+            <Clock className="h-5 w-5 shrink-0 text-accent" />
+            <p className="text-sm text-muted-foreground"><span className="font-semibold text-foreground">Mon–Sat</span>, 8am–5pm</p>
+          </div>
+        </div>
+      </section>
+
+
 
       {/* Services */}
       <section id="services" className="mx-auto max-w-6xl px-6 py-24">
