@@ -183,26 +183,62 @@ function Home() {
             Reach out about your property and we'll get back to you with a free estimate.
           </p>
         </div>
-        <div className="mt-10 grid gap-4 sm:grid-cols-3">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-xl border border-border bg-card p-6">
             <MapPin className="h-5 w-5 text-accent" />
             <p className="mt-3 text-sm font-semibold">Location</p>
             <p className="mt-1 text-sm text-muted-foreground">
-              3717 Gardenside Dr<br />Huntsville, AL 35810
+              3717 Gardenside Drive NW<br />Huntsville, AL 35810
             </p>
           </div>
           <div className="rounded-xl border border-border bg-card p-6">
             <Phone className="h-5 w-5 text-accent" />
             <p className="mt-3 text-sm font-semibold">Phone</p>
-            <a href="tel:+12566553696" className="mt-1 text-sm text-primary hover:underline">1+ (256) 655-3696</a>
+            <a href="tel:+12566553696" className="mt-1 block text-sm text-primary hover:underline">(256) 655-3696</a>
           </div>
           <div className="rounded-xl border border-border bg-card p-6">
             <Mail className="h-5 w-5 text-accent" />
             <p className="mt-3 text-sm font-semibold">Email</p>
-            <a href="mailto:Dpoutdoorservicesllc@gmail.com" className="mt-1 text-sm text-primary hover:underline">Dpoutdoorservicesllc@gmail.com</a>
+            <a href="mailto:dpoutdoorservicesllc@gmail.com" className="mt-1 block break-all text-sm text-primary hover:underline">dpoutdoorservicesllc@gmail.com</a>
+          </div>
+          <div className="rounded-xl border border-border bg-card p-6">
+            <Clock className="h-5 w-5 text-accent" />
+            <p className="mt-3 text-sm font-semibold">Business Hours</p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Monday – Saturday<br />8:00 AM – 5:00 PM<br />
+              <span className="text-xs">Closed Sunday</span>
+            </p>
           </div>
         </div>
       </section>
+
+      {/* Service areas */}
+      <section id="areas" className="bg-secondary">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-widest text-accent">Where we work</p>
+            <h2 className="mt-2 text-4xl font-bold tracking-tight">Service areas</h2>
+            <p className="mt-3 text-muted-foreground">
+              We serve all of Madison, Limestone, Morgan, and Marshall counties in North Alabama —
+              and we're also licensed to work in the state of Texas.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {counties.map((c) => (
+              <div key={c.name} className="rounded-xl border border-border bg-card p-6">
+                <MapPin className="h-5 w-5 text-accent" />
+                <h3 className="mt-4 text-lg font-semibold">{c.name}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{c.note}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 rounded-xl border border-accent/40 bg-card p-5 text-sm text-muted-foreground">
+            <span className="font-semibold text-foreground">Also licensed in Texas.</span>{" "}
+            Working on a property out of state? Give us a call — we're licensed to serve Texas as well.
+          </p>
+        </div>
+      </section>
+
 
       {/* Footer */}
       <footer className="border-t border-border bg-primary text-primary-foreground">
