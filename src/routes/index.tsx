@@ -158,13 +158,28 @@ function Home() {
             <h2 className="mt-2 text-4xl font-bold tracking-tight">Built on hard work and local roots.</h2>
             <p className="mt-5 text-muted-foreground">
               DP Outdoor Services LLC is owned and operated by Derrell Pattton Jr. out of
-              Huntsville, Alabama. We take pride in honest work, dependable service, and
-              treating every property like our own.
+              Huntsville, Alabama. The company was founded in April 2025, backed by 15 years
+              of hands-on experience in tree work and outdoor property care.
             </p>
             <p className="mt-4 text-muted-foreground">
-              This is the foundation of our site — more details, photos of past jobs, and
-              a full service list are coming soon.
+              We take pride in honest work, dependable service, and treating every property
+              like our own — from a single overgrown hedge to a full tree removal.
             </p>
+            <dl className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
+              <div className="rounded-xl border border-border bg-card p-4">
+                <dt className="text-xs uppercase tracking-widest text-muted-foreground">Experience</dt>
+                <dd className="mt-1 text-2xl font-bold text-primary">15 yrs</dd>
+              </div>
+              <div className="rounded-xl border border-border bg-card p-4">
+                <dt className="text-xs uppercase tracking-widest text-muted-foreground">Founded</dt>
+                <dd className="mt-1 text-2xl font-bold text-primary">2025</dd>
+              </div>
+              <div className="rounded-xl border border-border bg-card p-4">
+                <dt className="text-xs uppercase tracking-widest text-muted-foreground">Counties</dt>
+                <dd className="mt-1 text-2xl font-bold text-primary">4 + TX</dd>
+              </div>
+            </dl>
+
           </div>
           <div className="flex justify-center">
             <div className="rounded-2xl border border-border bg-card p-10 shadow-sm">
