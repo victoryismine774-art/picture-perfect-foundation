@@ -77,14 +77,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "DP Outdoor Services LLC" },
+      {
+        name: "description",
+        content:
+          "Professional tree work, lawn care, pressure washing, and property maintenance in Huntsville and North Alabama.",
+      },
+      { name: "author", content: "DP Outdoor Services LLC" },
+      { property: "og:site_name", content: "DP Outdoor Services LLC" },
+      { property: "og:title", content: "DP Outdoor Services LLC" },
+      {
+        property: "og:description",
+        content:
+          "Tree trimming, tree removal, stump grinding, landscaping, pressure washing, and gutter cleaning across North Alabama.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
