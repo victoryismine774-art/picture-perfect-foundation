@@ -48,7 +48,7 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { icon: Trees, title: "Tree Services", desc: "Tree trimming, tree removal, and stump grinding — done safely and cleaned up properly." },
+  { icon: Trees, title: "Tree Services", desc: "Tree trimming, tree removal, and stump grinding — done safely and cleaned up properly.", href: "/tree-services" },
   { icon: Leaf, title: "Lawn & Landscape", desc: "Lawn care, landscaping, bush and hedge trimming, plus planting and removal of plants." },
   { icon: Droplets, title: "Pressure Washing", desc: "Driveways, sidewalks, and home siding — washed clean and looking fresh." },
   { icon: HomeIcon, title: "Gutter Cleaning", desc: "Clear leaves and debris so water flows where it should, protecting your home." },
