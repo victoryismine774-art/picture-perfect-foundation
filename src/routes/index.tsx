@@ -169,6 +169,11 @@ function Home() {
               </div>
               <h3 className="mt-5 text-lg font-semibold">{s.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
+              {s.href ? (
+                <Link to={s.href} className="mt-4 inline-block text-sm font-semibold text-primary hover:underline">
+                  Learn more →
+                </Link>
+              ) : null}
             </div>
           ))}
         </div>
