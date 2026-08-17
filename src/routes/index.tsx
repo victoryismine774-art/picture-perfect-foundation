@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import logoAsset from "@/assets/dp-logo.png.asset.json";
 import heroImg from "@/assets/forest-hero.jpg";
 import { Trees, Leaf, Phone, Mail, MapPin, Droplets, Clock, Award, ShieldCheck, Home as HomeIcon } from "lucide-react";
