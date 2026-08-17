@@ -84,6 +84,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Professional tree work, lawn care, pressure washing, and property maintenance in Huntsville and North Alabama.",
       },
       { name: "author", content: "DP Outdoor Services LLC" },
+      {
+        name: "google-site-verification",
+        content: "-Qo076mfYLuPEocH2L7RcXIFxb7tAMVCuCko93-mM7s",
+      },
       { property: "og:site_name", content: "DP Outdoor Services LLC" },
       { property: "og:title", content: "DP Outdoor Services LLC" },
       {
