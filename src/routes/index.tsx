@@ -77,6 +77,7 @@ function Home() {
           </a>
           <nav className="hidden gap-7 text-sm font-medium text-foreground/80 md:flex">
             <a href="#services" className="hover:text-primary">Services</a>
+            <Link to="/tree-services" className="hover:text-primary">Tree Service</Link>
             <a href="#about" className="hover:text-primary">About</a>
             <a href="#areas" className="hover:text-primary">Service Areas</a>
             <a href="#contact" className="hover:text-primary">Contact</a>
