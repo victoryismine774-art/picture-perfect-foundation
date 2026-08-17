@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://picture-perfect-foundation.lovable.app/sitemap.xml

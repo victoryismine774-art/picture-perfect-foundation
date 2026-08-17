@@ -103,8 +103,11 @@ function Home() {
             Huntsville, Alabama
           </span>
           <h1 className="mt-6 max-w-3xl text-5xl font-extrabold leading-tight tracking-tight text-primary-foreground md:text-6xl">
-            Outdoor work, done right the first time.
+            Tree Service &amp; Lawn Care in Huntsville, AL
           </h1>
+          <p className="mt-4 max-w-2xl text-xl font-semibold text-primary-foreground/95">
+            Outdoor work, done right the first time.
+          </p>
           <p className="mt-5 max-w-xl text-lg text-primary-foreground/90">
             Locally owned tree, lawn, and property services with 15 years of experience —
             serving Madison, Limestone, Morgan, and Marshall counties in North Alabama.
