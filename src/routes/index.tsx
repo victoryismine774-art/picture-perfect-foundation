@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import logoAsset from "@/assets/dp-logo.png.asset.json";
 import heroImg from "@/assets/forest-hero.jpg";
 import { Trees, Leaf, Phone, Mail, MapPin, Droplets, Clock, Award, ShieldCheck, Home as HomeIcon } from "lucide-react";
@@ -40,15 +40,17 @@ export const Route = createFileRoute("/")({
           "Locally owned outdoor and land services serving North Alabama — tree work, landscaping, pressure washing, and gutter cleaning.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://picture-perfect-foundation.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://picture-perfect-foundation.lovable.app/" }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }],
   }),
   component: Home,
 });
 
 const services = [
-  { icon: Trees, title: "Tree Services", desc: "Tree trimming, tree removal, and stump grinding — done safely and cleaned up properly." },
+  { icon: Trees, title: "Tree Services", desc: "Tree trimming, tree removal, and stump grinding — done safely and cleaned up properly.", href: "/tree-services" },
   { icon: Leaf, title: "Lawn & Landscape", desc: "Lawn care, landscaping, bush and hedge trimming, plus planting and removal of plants." },
   { icon: Droplets, title: "Pressure Washing", desc: "Driveways, sidewalks, and home siding — washed clean and looking fresh." },
   { icon: HomeIcon, title: "Gutter Cleaning", desc: "Clear leaves and debris so water flows where it should, protecting your home." },
@@ -75,6 +77,7 @@ function Home() {
           </a>
           <nav className="hidden gap-7 text-sm font-medium text-foreground/80 md:flex">
             <a href="#services" className="hover:text-primary">Services</a>
+            <Link to="/tree-services" className="hover:text-primary">Tree Service</Link>
             <a href="#about" className="hover:text-primary">About</a>
             <a href="#areas" className="hover:text-primary">Service Areas</a>
             <a href="#contact" className="hover:text-primary">Contact</a>
@@ -169,6 +172,11 @@ function Home() {
               </div>
               <h3 className="mt-5 text-lg font-semibold">{s.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
+              {s.href ? (
+                <Link to={s.href} className="mt-4 inline-block text-sm font-semibold text-primary hover:underline">
+                  Learn more →
+                </Link>
+              ) : null}
             </div>
           ))}
         </div>
